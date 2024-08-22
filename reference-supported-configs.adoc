@@ -1,0 +1,106 @@
+---
+sidebar: sidebar 
+permalink: reference-supported-configs.html 
+keywords: ec2, instance, type, vm, explore, standard, premium, byol, capacity, maximum, virtual machine, Cloud Volumes ONTAP, supported, configurations 
+summary: O Cloud Volumes ONTAP está disponível em várias configurações na AWS e no Azure. 
+---
+= Configurações compatíveis
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+O Cloud Volumes ONTAP está disponível na AWS e no Azure em duas opções de preço: Pagamento conforme o uso e traga sua própria licença (BYOL). Para pagamento conforme o uso, você pode escolher entre três configurações: Explore, Standard ou Premium.
+
+
+
+== Cloud Volumes ONTAP para AWS
+
+Na AWS, você pode implantar o Cloud Volumes ONTAP como um único sistema ou par de HA.
+
+[cols="h,d,d,d,d"]
+|===
+|  | Explore | Padrão | Premium | BYOL 
+
+
+| Tipos de instância do EC2 | m4.xlarge  a| 
+* m4.2xlarge
+* r4.xlarge
+
+ a| 
+* c4.4xlarge
+* c4.8xlarge
+* m4.4xlarge
+* r4.2xlarge
+
+ a| 
+* c4.4xlarge
+* c4.8xlarge
+* m4.xlarge
+* m4.2xlarge
+* m4.4xlarge
+* r4.xlarge
+* r4.2xlarge
+
+
+
+
+| Storage subjacente 4+| SSDs de uso geral, SSDs IOPS provisionados, HDDs otimizados de taxa de transferência e HDDs frios, até 16 TIB por disco 
+
+
+| Capacidade máxima do sistema (discos e armazenamento de objetos) | 2 TIB | 10 TIB | 368 TIB | 368 TIB por licença 
+|===
+Notas:
+
+. Se você habilitar a disposição de dados em categorias, o limite de capacidade de um sistema permanecerá o mesmo. O limite de capacidade inclui discos e armazenamento de objetos.
+. A disposição de dados em categorias é compatível com o padrão Cloud Volumes ONTAP, Premium e BYOL.
+. Quando você escolhe um tipo de instância EC2, você pode especificar se é uma instância compartilhada ou uma instância dedicada.
+. O desempenho de gravação aprimorado é suportado ao usar SSDs EBS com padrão Cloud Volumes ONTAP, Premium e BYOL.
+. Para obter suporte à região da AWS, https://cloud.netapp.com/cloud-volumes-global-regions["Regiões globais do Cloud volumes"^] consulte .
+
+
+
+
+== Cloud Volumes ONTAP para Azure
+
+No Azure, você pode implantar o Cloud Volumes ONTAP como um sistema de nó único.
+
+[cols="h,d,d,d,d"]
+|===
+|  | Explore | Padrão | Premium | BYOL 
+
+
+| Tipos de máquinas virtuais | DS3_v2  a| 
+* DS4_v2
+* DS13_v2
+
+ a| 
+* DS5_v2
+* DS14_v2
+
+ a| 
+* DS3_v2
+* DS4_v2
+* DS5_v2
+* DS13_v2
+* DS14_v2
+
+
+
+
+| Storage subjacente 4+| Discos gerenciados HDD padrão, discos gerenciados SSD padrão e discos gerenciados SSD premium, até 32 TIB por disco 
+
+
+| Capacidade máxima do sistema (discos e armazenamento de objetos) | 2 TIB | 10 TIB | 368 TIB | 368 TIB por licença 
+|===
+Notas:
+
+. Se você habilitar a disposição de dados em categorias, o limite de capacidade de um sistema permanecerá o mesmo. O limite de capacidade inclui discos e armazenamento de objetos.
+. A disposição de dados em categorias não é compatível com o tipo de máquina virtual DS3_v2.
+. O desempenho de gravação aprimorado é habilitado ao usar discos de armazenamento Premium do Azure, mas não ao usar o tipo de máquina virtual DS3_v2.
+. Para obter suporte à região do Azure, https://cloud.netapp.com/cloud-volumes-global-regions["Regiões globais do Cloud volumes"^] consulte .
+

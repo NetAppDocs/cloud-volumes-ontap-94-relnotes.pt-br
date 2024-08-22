@@ -1,0 +1,122 @@
+---
+sidebar: sidebar 
+permalink: reference-new.html 
+keywords: 'what"s new, new, features, release notes, enhancements' 
+summary: Novas versões do Cloud Volumes ONTAP introduzem novos recursos, melhorias e correções de bugs. 
+---
+= Novidades do Cloud Volumes ONTAP 9,4
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+O Cloud Volumes ONTAP 9,4 inclui vários novos recursos e aprimoramentos.
+
+
+NOTE: Recursos e aprimoramentos adicionais também são introduzidos nas versões mais recentes do Cloud Manager. Consulte https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/whats-new.html["Notas de versão do Cloud Manager"^] para obter detalhes.
+
+
+
+== Suporte para pagamento conforme o uso na região AWS GovCloud (EUA)
+
+A versão de pagamento conforme o uso do Cloud Volumes ONTAP agora é compatível na região AWS GovCloud (EUA). Isso também é compatível com o Cloud Volumes ONTAP BYOL na região GovCloud (EUA).
+
+Você pode implantar o Cloud Volumes ONTAP na região do GovCloud (EUA) como qualquer outra região. Vá para o NetApp Cloud Central e inicie o Cloud Manager no GovCloud (EUA). Em seguida, inicie o Cloud Volumes ONTAP PAYGO ou BYOL criando um novo ambiente de trabalho no Cloud Manager.
+
+
+
+== Disposição em camadas de dados inativos com o Cloud Volumes ONTAP Premium e BYOL
+
+A versão 9,2 introduziu a disposição automatizada de dados em camadas entre uma camada de performance (SSD ou HDD) e uma camada de capacidade (armazenamento de objetos). Os dados inativos enviados para o nível de capacidade incluíam cópias Snapshot de volumes de leitura e gravação (a política de disposição em camadas _Snapshot Only_) ou dados de volumes de destino (a política de disposição em camadas _backup_).
+
+Com o Cloud Volumes ONTAP 9,4 Premium e o BYOL, agora você tem uma terceira opção: Você pode usar a política de disposição em camadas _auto_ para categorizar blocos de dados inativos em um volume de leitura e gravação para uma categoria de capacidade. Os dados inativos incluem não apenas cópias Snapshot, mas também dados de usuários inativos do sistema de arquivos ativo.
+
+Se forem lidos por leituras aleatórias, os blocos de dados inativos na camada de capacidade aquecem e migram para a camada de performance. Se forem lidos por leituras sequenciais, como as associadas a verificações de índice e antivírus, os blocos de dados inativos permanecem inativos e não se movem para o nível de desempenho.
+
+Você pode escolher a política de disposição em categorias ao criar ou editar um volume no Cloud Manager. Para obter detalhes, https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-tiering.html["Documentação do Cloud Manager"] consulte .
+
+
+
+== Categorização de dados no Microsoft Azure
+
+Agora você pode reduzir seus custos de storage do Azure combinando uma camada de performance para dados ativos (discos gerenciados Premium ou Standard) com uma categoria de capacidade para dados inativos (storage Blob do Azure). As mesmas políticas de disposição em camadas compatíveis com a AWS também são compatíveis com o Azure: automático, somente Snapshot e backup.
+
+
+NOTE: A disposição de dados em categorias não é compatível com o tipo de máquina virtual DS3_v2.
+
+Você pode escolher a política de disposição em categorias ao criar ou editar um volume no Cloud Manager. Para obter detalhes, https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-tiering.html["Documentação do Cloud Manager"] consulte .
+
+
+
+== Disposição de dados em categorias com SSDs IOPS provisionados
+
+A disposição de dados em categorias agora é compatível com a AWS com SSDs IOPS provisionados. Você pode usar esses SSDs como camada de performance para dados ativos, com o Amazon S3 como camada de capacidade para dados inativos.
+
+
+
+== Melhor performance ao dispor em camadas os dados
+
+A performance de gravação aprimorada que foi introduzida nas versões 9,2 e 9,3 agora é compatível com volumes que categorizam dados inativos em uma camada de capacidade de armazenamento de objetos. Isso se aplica a volumes criados em novos agregados SSD no Cloud Volumes ONTAP 9,4.
+
+
+
+== Desempenho aprimorado para vários workloads na AWS
+
+O Cloud Volumes ONTAP agora tem largura de banda de rede adicional na AWS, o que proporciona melhor desempenho para sistemas com vários workloads. A largura de banda adicional está disponível para os seguintes tipos de instância do EC2 ao atualizar para o 9,4 e ao iniciar novos sistemas 9,4:
+
+* m4.xlarge
+* m4.2xlarge
+* m4.4xlarge
+* c4.4xlarge
+* c4.8xlarge
+
+
+
+
+== Os tipos de instância do EC2 não são mais suportados
+
+Todas as versões do Cloud Volumes ONTAP não suportam mais vários tipos de instância do EC2. Os sistemas existentes que executam esses tipos de instância continuarão operando normalmente; no entanto, o NetApp recomenda fortemente que você mude para um tipo de instância diferente.
+
+Para analisar as diferenças de preço entre os tipos de instância e as licenças do NetApp, acesse o AWS Marketplace para http://aws.amazon.com/marketplace/pp/B011KEZ734["sistemas de nó único"^] e para http://aws.amazon.com/marketplace/pp/B01H4LVJ84["Pares HA"^].
+
+[cols="2*"]
+|===
+| O tipo de instância não é mais suportado | Tipo de instância recomendado 
+
+
+| c3.2xlarge | m4.xlarge 
+
+
+| c4.2xlarge | m4.2xlarge 
+
+
+| m3.xlarge | m4.xlarge 
+
+
+| m3.2xlarge | m4.2xlarge 
+
+
+| r3.xlarge | m4.2xlarge 
+
+
+| r3.2xlarge | r4.2xlarge 
+|===
+
+TIP: Os tipos de instâncias M3 e R3 não são compatíveis com categorização de dados e desempenho aprimorado. Portanto, a migração para os tipos de instâncias M4 e R4 permite que você aproveite esses recursos do Cloud Volumes ONTAP.
+
+
+
+== Notas de atualização
+
+* As atualizações do Cloud Volumes ONTAP devem ser concluídas a partir do Cloud Manager. Você não deve atualizar o Cloud Volumes ONTAP usando o Gerenciador de sistema ou a CLI. Isso pode afetar a estabilidade do sistema.
+* Você pode atualizar para o Cloud Volumes ONTAP 9,4 a partir da versão 9,3.
++
+Para compreender os requisitos da versão, http://docs.netapp.com/ontap-9/topic/com.netapp.doc.exp-dot-upgrade/GUID-AC0EB781-583F-4C90-A4C4-BC7B14CEFD39.html["Documentação do ONTAP 9: Requisitos de atualização do cluster"^] consulte a .
+
+* A atualização de um sistema de nó único leva o sistema off-line por até 25 minutos, durante os quais a e/S é interrompida.
+* A atualização de um par de HA não causa interrupções e e/S é ininterrupta. Durante esse processo de atualização sem interrupções, cada nó é atualizado em conjunto para continuar fornecendo e/S aos clientes.
+
