@@ -279,7 +279,6 @@
   <block id="d6b23a41a85f490ae75b43cb4095d8c0" category="list-text">O desempenho de gravação aprimorado é habilitado ao usar discos de armazenamento Premium do Azure, mas não ao usar o tipo de máquina virtual DS3_v2.</block>
   <block id="7c7627c6477255acb2239bd1be90f346" category="list-text">Para obter suporte à região do Azure,<block ref="2b6a522631c3b3b8afac5466195e108a" category="inline-link-rx"></block> consulte .</block>
   <block id="7d9b2b78909e33445be41b4ae9f344ee" category="sidebar">Essas notas de versão descrevem novos recursos, limitações e problemas conhecidos do Cloud Volumes ONTAP 9,4.</block>
-  <block id="a7c547126254140f4fce2f237d58af44" category="sidebar">Notas de versão do Cloud Volumes ONTAP 9,4</block>
   <block id="be11c74c1dd7f307bb80183a90dc2067" category="sidebar">Comece agora</block>
   <block id="33871b6190a8d5adbe8b15282054766c" category="sidebar">O que há de novo</block>
   <block id="e19968c5ebc4b94a271992f4b0563be8" category="sidebar">Configurações e limites</block>
@@ -288,5 +287,5 @@
   <block id="dd490b81914dd945601e442a41cb4222" category="sidebar">Comunidade NetApp</block>
   <block id="ff6c37cbc252e306a6b4e390ec13cbc1" category="sidebar">Blog do Cloud Central</block>
   <block id="ad203e818e0c9d7f42f1c260b33875f3" category="sidebar">Webinars na nuvem</block>
-  <block id="da38098873cb3db962a9491ab33ff93d" category="sidebar">Notas de lançamento para casa</block>
+  <block id="a61a85744fee28d1b209cdce2108ab2b" category="sidebar">Notas de versão do Cloud Volumes ONTAP 9,4</block>
 </blocks>
