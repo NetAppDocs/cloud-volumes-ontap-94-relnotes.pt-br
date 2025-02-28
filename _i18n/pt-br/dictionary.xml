@@ -271,13 +271,11 @@
   <block id="9de28fbf6817cd511eb799f9575b611d" category="list-text">Quando você escolhe um tipo de instância EC2, você pode especificar se é uma instância compartilhada ou uma instância dedicada.</block>
   <block id="9904b0ede3a9bd5892bd94e6884380ae" category="list-text">O desempenho de gravação aprimorado é suportado ao usar SSDs EBS com padrão Cloud Volumes ONTAP, Premium e BYOL.</block>
   <block id="a3f8304ab1695053d71855c60f8abf63" category="inline-link">Regiões globais do Cloud volumes</block>
-  <block id="4375839c669e051e5f2a8de11ba0c5d0" category="list-text">Para obter suporte à região da AWS,<block ref="2b6a522631c3b3b8afac5466195e108a" category="inline-link-rx"></block> consulte .</block>
   <block id="2544021bbaa4bc6eadfddbb17edf7811" category="section-title">Cloud Volumes ONTAP para Azure</block>
   <block id="0880fd0b2e173edf438b6f7e4d92af32" category="paragraph">No Azure, você pode implantar o Cloud Volumes ONTAP como um sistema de nó único.</block>
   <block id="5fbb3d7412f89cff55389171f83d7684" category="cell">Tipos de máquinas virtuais</block>
   <block id="50bb513ae39b44421d182e4072a83998" category="cell">Discos gerenciados HDD padrão, discos gerenciados SSD padrão e discos gerenciados SSD premium, até 32 TIB por disco</block>
   <block id="d6b23a41a85f490ae75b43cb4095d8c0" category="list-text">O desempenho de gravação aprimorado é habilitado ao usar discos de armazenamento Premium do Azure, mas não ao usar o tipo de máquina virtual DS3_v2.</block>
-  <block id="7c7627c6477255acb2239bd1be90f346" category="list-text">Para obter suporte à região do Azure,<block ref="2b6a522631c3b3b8afac5466195e108a" category="inline-link-rx"></block> consulte .</block>
   <block id="7d9b2b78909e33445be41b4ae9f344ee" category="sidebar">Essas notas de versão descrevem novos recursos, limitações e problemas conhecidos do Cloud Volumes ONTAP 9,4.</block>
   <block id="be11c74c1dd7f307bb80183a90dc2067" category="sidebar">Comece agora</block>
   <block id="33871b6190a8d5adbe8b15282054766c" category="sidebar">O que há de novo</block>
@@ -288,4 +286,6 @@
   <block id="ff6c37cbc252e306a6b4e390ec13cbc1" category="sidebar">Blog do Cloud Central</block>
   <block id="ad203e818e0c9d7f42f1c260b33875f3" category="sidebar">Webinars na nuvem</block>
   <block id="a61a85744fee28d1b209cdce2108ab2b" category="sidebar">Notas de versão do Cloud Volumes ONTAP 9,4</block>
+  <block id="0890aa708cef7529c2bd35cb7d2895df" category="list-text">Para obter suporte à região da AWS,<block ref="e55b14db85f4d4837890e415926626e0" category="inline-link-rx"></block> consulte .</block>
+  <block id="f0de068c81c765820aca0fa8fe017396" category="list-text">Para obter suporte à região do Azure,<block ref="e55b14db85f4d4837890e415926626e0" category="inline-link-rx"></block> consulte .</block>
 </blocks>
